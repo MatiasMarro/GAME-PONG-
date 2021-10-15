@@ -7,7 +7,9 @@
 
 1357599210 c:\users\matias\desktop\c++proyecto2\libgame.h
 
-1634240365 source:c:\users\matias\desktop\c++proyecto2\main.cpp
+1634265835 source:c:\users\matias\desktop\c++proyecto2\main.cpp
 	<stdio.h>
+	<conio.h>
+	<windows.h>
 	"libgame.h"
 
