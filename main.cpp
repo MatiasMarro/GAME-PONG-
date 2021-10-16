@@ -1,62 +1,47 @@
 #include <stdio.h>
 #include <conio.h>
 #include <windows.h>
-
+#include "pong.h"
 #include "libgame.h"
 
 
-class JUGADOR {
-    int x,y;
-public:
-    JUGADOR(int _x, int _y);
-    void pintar() const ;
-    void borrar() const;
-    void Y(int _y) {y += _y;}
-};
-
-JUGADOR::JUGADOR(int _x, int _y): x(_x), y(_y){}
-
-void JUGADOR::pintar() const{
-
-    gotoxy(x,y-1); printf("%c",219);
-    gotoxy(x,y);   printf("%c",219);
-    gotoxy(x,y+1); printf("%c",219);
-
-}
-void JUGADOR::borrar() const{
-    gotoxy(x,y-1); printf(" ");
-    gotoxy(x,y);   printf(" ");
-    gotoxy(x,y+1); printf(" ");
-}
-
 
 int main(){
+    int cont = 0, opcionJuego;
+
     OcultaCursor();
     pintar_marco();
 
-    JUGADOR A(6,15);  A.pintar();
-    JUGADOR B(74,15); B.pintar();
+    MENU M;
+    M.pintarPortada(opcionJuego);
+
+    JUGADOR A(4,13);  A.pintar();
+    JUGADOR B(75,13); B.pintar();
+
+    PELOTA P(38,14,1,1);
+
 
     char tecla;
 
+
+
     while(1){
-        A.borrar();     B.borrar();
 
         if(kbhit()){
             A.borrar(); B.borrar();
             tecla = getch();
-            if(tecla == 'q') A.Y(-1); else if(tecla == 'a') A.Y(1);
-            if(tecla == 'o') B.Y(-1); else if(tecla == 'l') B.Y(1);
+            if(tecla == 'q' && A.RY() > 5) A.Y(-1); else if(tecla == 'a' && A.RY() < 21) A.Y(1);
+            if(opcionJuego == '1'){
+                if(tecla == 'o' && B.RY() > 5) B.Y(-1); else if(tecla == 'l' && B.RY() < 21) B.Y(1);
+            }
             A.pintar(); B.pintar();
         }
 
-        A.pintar(); B.pintar();
-
-
+        if(opcionJuego == '2' &&  !cont)B.moverCPU(P.PX(),P.PY(),P.DX());
+        //if(!cont++) P.mover(A,B); // Con los condicionales hacemos que la pelota se mueva mas lento
+        if(cont > 5) cont = 0;    // Con ese condicional  disminuyendo el numero entero aumentamos la velocidad
         pausa(10);
 
     }
-
-
     return 0;
 }

@@ -34,6 +34,8 @@
 		<Unit filename="../../libgame.cpp" />
 		<Unit filename="../../libgame.h" />
 		<Unit filename="../../main.cpp" />
+		<Unit filename="../../pong.cpp" />
+		<Unit filename="../../pong.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
