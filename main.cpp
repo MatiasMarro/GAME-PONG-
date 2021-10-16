@@ -38,8 +38,8 @@ int main(){
         }
 
         if(opcionJuego == '2' &&  !cont)B.moverCPU(P.PX(),P.PY(),P.DX());
-        //if(!cont++) P.mover(A,B); // Con los condicionales hacemos que la pelota se mueva mas lento
-        if(cont > 5) cont = 0;    // Con ese condicional  disminuyendo el numero entero aumentamos la velocidad
+        if(!cont++) P.mover(A,B); // Con los condicionales hacemos que la pelota se mueva mas lento
+        if(cont > 2) cont = 0;    // Con ese condicional  disminuyendo el numero entero aumentamos la velocidad
         pausa(10);
 
     }

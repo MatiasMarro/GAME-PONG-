@@ -7,14 +7,14 @@
 
 1357599210 c:\users\matias\desktop\c++proyecto2\libgame.h
 
-1634348123 source:c:\users\matias\desktop\c++proyecto2\main.cpp
+1634348413 source:c:\users\matias\desktop\c++proyecto2\main.cpp
 	<stdio.h>
 	<conio.h>
 	<windows.h>
 	"pong.h"
 	"libgame.h"
 
-1634348107 c:\users\matias\desktop\c++proyecto2\pong.h
+1634350028 c:\users\matias\desktop\c++proyecto2\pong.h
 
 1634345095 source:c:\users\matias\desktop\c++proyecto2\pong.cpp
 	"pong.h"
